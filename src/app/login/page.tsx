@@ -1,23 +1,8 @@
-"use client";
-import { useState, useEffect } from "react";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getProviders, signIn } from "next-auth/react";
 
 const LoginPage = () => {
-  const [providers, setProviders] = useState<null | any>(null);
-
-  async function fetchData() {
-    const providersData = await getProviders();
-    setProviders(providersData);
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-  console.log(providers);
-
   return (
     <div className="h-full">
       <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between ">

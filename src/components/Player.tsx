@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 const AudioPlayer = () => {
-  const audioSrc = "https://assets.codepen.io/4358584/Anitek_-_Komorebi.mp3";
+  const audioSrc = "";
 
   const [playState, setPlayState] = useState("play");
   const [muteState, setMuteState] = useState("unmute");
