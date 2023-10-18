@@ -2,7 +2,8 @@
 import { useEffect, useState } from "react";
 
 const AudioPlayer = () => {
-  const audioSrc = "";
+  const audioSrc =
+    "https://cdns-preview-1.dzcdn.net/stream/c-1afe80e99f64107a65a730966f301ed1-12.mp3";
 
   const [playState, setPlayState] = useState("play");
   const [muteState, setMuteState] = useState("unmute");
