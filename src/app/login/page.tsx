@@ -3,6 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const LoginPage = () => {
+  const CLIENT_ID = String(process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID);
+  const REDIRECT_URI = String(process.env.NEXT_PUBLIC_REDIRECT_URL);
+  const AUTH_ENDPOINT = String(process.env.NEXT_PUBLIC_AUTH_ENDPOINT);
+  const RESPONSE_TYPE = String(process.env.NEXT_PUBLIC_RESPONSE_TYPE);
   return (
     <div className="h-full">
       <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between ">
@@ -19,16 +23,19 @@ const LoginPage = () => {
             <section className="h-screen bg-inherit flex items-center justify-center">
               <div className="  rounded-lg p-8 shadow-md w-96">
                 <h2 className="text-2xl font-bold mb-4">Str3am Login</h2>
-
-                <button className="flex items-center space-x-2 bg-green-500 text-white rounded-lg p-2 w-full mb-4 hover:bg-green-600">
-                  <Image
-                    src="/spotify.svg"
-                    alt="spotify"
-                    width={25}
-                    height={25}
-                  />
-                  <span>Login with Spotify</span>
-                </button>
+                <Link
+                  href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+                >
+                  <button className="flex items-center space-x-2 bg-green-500 text-white rounded-lg p-2 w-full mb-4 hover:bg-green-600">
+                    <Image
+                      src="/spotify.svg"
+                      alt="spotify"
+                      width={25}
+                      height={25}
+                    />
+                    <span>Login with Spotify</span>
+                  </button>
+                </Link>
 
                 <button className="flex items-center space-x-2 bg-red-500 text-white rounded-lg p-2 w-full hover:bg-red-600">
                   <Image
